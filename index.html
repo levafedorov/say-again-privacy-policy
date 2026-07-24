@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SayAgain — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #5a5a5a;
+      --border: #e2e2e2;
+      --accent: #2b6cb0;
+      --card: #f7f7f8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14161a;
+        --fg: #e6e8eb;
+        --muted: #9aa0a6;
+        --border: #2a2e35;
+        --accent: #6aa9e9;
+        --card: #1b1e24;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 4px; }
+    h2 { font-size: 1.25rem; margin: 40px 0 12px; padding-top: 8px; }
+    h3 { font-size: 1.02rem; margin: 22px 0 6px; }
+    p, li { color: var(--fg); }
+    a { color: var(--accent); }
+    .meta { color: var(--muted); font-size: 0.92rem; margin-bottom: 28px; }
+    .lead { font-size: 1.05rem; }
+    ul { padding-left: 22px; }
+    li { margin: 6px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.95rem;
+      display: block;
+      overflow-x: auto;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { background: var(--card); }
+    .note {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 18px 0;
+    }
+    footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    code {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>SayAgain — Privacy Policy</h1>
+  <p class="meta">Effective date: 24 July 2026 · Last updated: 24 July 2026</p>
+
+  <p class="lead">
+    SayAgain is a browser extension that lets you capture, translate, and replay
+    phrases from YouTube subtitles. This policy explains, in plain terms, what
+    data the extension handles, why, and who it is shared with. We keep the list
+    deliberately short — SayAgain collects only what it needs to do its job.
+  </p>
+
+  <div class="note">
+    <strong>The short version:</strong> we store the phrases you choose to save,
+    your account email, and your settings. We do not run ads, we do not sell your
+    data, we do not track your browsing history, and we use no analytics or
+    tracking tools. Card payments are handled entirely by Stripe — we never see
+    or store your card number.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>
+    SayAgain is an independent project operated by the extension's developer
+    ("we", "us"). For any privacy question or request, contact us at the address
+    in the <a href="#contact">Contact</a> section below.
+  </p>
+
+  <h2>2. What we collect</h2>
+  <p>The extension works without an account. If you choose to create one, and as you use the features, the following data is handled:</p>
+
+  <h3>Account information</h3>
+  <ul>
+    <li><strong>Email address</strong> — collected only if you create an account, so you can sign in and recover access. Account sign-in and account emails (confirmation code, password reset) are handled by our authentication provider, Supabase.</li>
+  </ul>
+
+  <h3>Saved phrases ("cards")</h3>
+  <p>When you save a phrase, we store the information needed to show and replay it later:</p>
+  <ul>
+    <li>the phrase text and its translation;</li>
+    <li>the source video's title, URL, and identifier, and the timestamp of the phrase within the video;</li>
+    <li>the target language and the time you saved the card.</li>
+  </ul>
+
+  <h3>Settings and subscription</h3>
+  <ul>
+    <li>your preferences (for example, your native language and the hover-to-pause option);</li>
+    <li>your subscription status, and — if you subscribe — a customer identifier provided by Stripe so we can recognise your subscription. This identifier is used only on our server and is never exposed to the extension.</li>
+  </ul>
+
+  <h3>What we do NOT collect</h3>
+  <ul>
+    <li>No browsing history, no record of the videos you watch (only the specific phrases you deliberately save).</li>
+    <li>No analytics, telemetry, advertising, or tracking of any kind.</li>
+    <li>No payment card details — see <a href="#payments">Payments</a>.</li>
+  </ul>
+
+  <h2>3. How we use your data</h2>
+  <ul>
+    <li>To provide the core features: translating phrases and storing your saved cards and settings so they are available when you return and across your signed-in devices.</li>
+    <li>To operate accounts: sign-in, email confirmation, and password reset.</li>
+    <li>To manage subscriptions: recognise whether your plan is active and unlock the corresponding features.</li>
+  </ul>
+  <p>We do not use your data for advertising or profiling, and we do not sell or rent it to anyone.</p>
+
+  <h2>4. Who we share data with (service providers)</h2>
+  <p>SayAgain relies on a small number of trusted providers that process data on our behalf, strictly to deliver the features above:</p>
+  <table>
+    <thead>
+      <tr><th>Provider</th><th>Purpose</th><th>Data involved</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Supabase</td>
+        <td>Database and account authentication (sign-in, account emails)</td>
+        <td>Email, saved cards, settings, subscription status</td>
+      </tr>
+      <tr>
+        <td>Google Cloud Translation</td>
+        <td>Translating the phrase text you ask to translate</td>
+        <td>The phrase text and the target language (no account identity attached)</td>
+      </tr>
+      <tr>
+        <td>Stripe</td>
+        <td>Processing subscription payments and the billing portal</td>
+        <td>Payment details you enter on Stripe; a subscription/customer identifier</td>
+      </tr>
+      <tr>
+        <td>Google Chrome Web Store</td>
+        <td>Distributing and updating the extension</td>
+        <td>Governed by Google's own policies</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Each provider processes data only as needed for its function and under its own privacy terms.</p>
+
+  <h2 id="payments">5. Payments</h2>
+  <p>
+    Subscription payments are processed entirely by <strong>Stripe</strong>. When
+    you upgrade, you are taken to a Stripe-hosted page and enter your card details
+    directly with Stripe. <strong>We never receive, see, or store your card
+    number.</strong> We only learn from Stripe whether your subscription is active,
+    plus an identifier that lets us match it to your account.
+  </p>
+
+  <h2>6. Browser permissions</h2>
+  <p>The extension requests only the permissions it needs:</p>
+  <ul>
+    <li><code>storage</code> — save your cards and settings on your device and sync them when signed in.</li>
+    <li><code>alarms</code> — schedule background retries (for example, re-attempting a translation that failed).</li>
+    <li><code>identity</code> — support signing in with Google.</li>
+    <li>Access to <code>youtube.com</code> — read subtitles on the page so you can capture phrases.</li>
+    <li>Access to our own backend server — send phrases for translation and sync your cards. It is never granted access to any other website.</li>
+  </ul>
+
+  <h2>7. Data retention and deletion</h2>
+  <p>
+    We keep your data for as long as your account exists. You can request deletion
+    of your account and associated data at any time by contacting us at the address
+    below; we will remove it from our database. Cards you keep only on your device
+    (before signing in) are removed when you clear the extension's storage or remove
+    the extension.
+  </p>
+
+  <h2>8. Data security</h2>
+  <p>
+    All communication between the extension, our server, and our providers uses
+    encrypted HTTPS connections. Access to the database is restricted to our
+    server, and account credentials are handled by our authentication provider,
+    not stored by the extension.
+  </p>
+
+  <h2>9. Children</h2>
+  <p>SayAgain is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+  <h2>10. Changes to this policy</h2>
+  <p>
+    We may update this policy as the extension evolves. Material changes will be
+    reflected here with a new "Last updated" date. Continued use of the extension
+    after an update means you accept the revised policy.
+  </p>
+
+  <h2 id="contact">11. Contact</h2>
+  <p>
+    For any privacy question, or to request deletion of your data, contact us at:
+    <a href="mailto:flsfedorovlev@gmail.com">flsfedorovlev@gmail.com</a>.
+  </p>
+
+  <footer>
+    SayAgain — Capture and replay phrases from YouTube subtitles.
+  </footer>
+</main>
+</body>
+</html>
