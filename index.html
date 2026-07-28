@@ -85,7 +85,7 @@
 <body>
 <main>
   <h1>SayAgain — Privacy Policy</h1>
-  <p class="meta">Effective date: 24 July 2026 · Last updated: 24 July 2026</p>
+  <p class="meta">Effective date: 24 July 2026 · Last updated: 28 July 2026</p>
 
   <p class="lead">
     SayAgain is a browser extension that lets you capture, translate, and replay
@@ -97,9 +97,11 @@
   <div class="note">
     <strong>The short version:</strong> we store the phrases you choose to save,
     your account email, and your settings. We do not run ads, we do not sell your
-    data, we do not track your browsing history, and we use no analytics or
-    tracking tools. Card payments are handled entirely by Stripe — we never see
-    or store your card number.
+    data, we do not follow you around the web, and we use no analytics or
+    tracking tools. We do record which video a saved phrase came from — its
+    address and title — because a card cannot replay a moment without knowing
+    where that moment is. Card payments are handled entirely by Stripe — we never
+    see or store your card number.
   </div>
 
   <h2>1. Who we are</h2>
@@ -133,7 +135,7 @@
 
   <h3>What we do NOT collect</h3>
   <ul>
-    <li>No browsing history, no record of the videos you watch (only the specific phrases you deliberately save).</li>
+    <li>No record of your browsing. We do not see, log, or store the pages you visit or the videos you watch. The one exception is deliberate and listed above: when <em>you</em> save a phrase, the card keeps that video's address and title, so it can replay that exact moment later. Videos you merely watch leave no trace with us.</li>
     <li>No analytics, telemetry, advertising, or tracking of any kind.</li>
     <li>No payment card details — see <a href="#payments">Payments</a>.</li>
   </ul>
@@ -169,6 +171,16 @@
         <td>The phrase text and the target language (no account identity attached)</td>
       </tr>
       <tr>
+        <td>Google Cloud Run (Frankfurt, EU)</td>
+        <td>Hosting our server — the one that translates, syncs cards and serves the review player page</td>
+        <td>Everything the extension sends us passes through it: phrase text, saved cards, account requests</td>
+      </tr>
+      <tr>
+        <td>Cloudflare</td>
+        <td>Our domain and the secure connection to our server</td>
+        <td>Requests to our server pass through Cloudflare, which terminates the encrypted connection</td>
+      </tr>
+      <tr>
         <td>Stripe</td>
         <td>Processing subscription payments and the billing portal</td>
         <td>Payment details you enter on Stripe; a subscription/customer identifier</td>
@@ -183,6 +195,11 @@
   <p>Each provider processes data only as needed for its function and under its own privacy terms.</p>
 
   <h2 id="payments">5. Payments</h2>
+  <p>
+    <em>Subscriptions are not switched on yet — the current version of the
+    extension cannot take a payment at all. This section describes how it will
+    work when they are.</em>
+  </p>
   <p>
     Subscription payments are processed entirely by <strong>Stripe</strong>. When
     you upgrade, you are taken to a Stripe-hosted page and enter your card details
