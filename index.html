@@ -85,7 +85,7 @@
 <body>
 <main>
   <h1>SayAgain — Privacy Policy</h1>
-  <p class="meta">Effective date: 24 July 2026 · Last updated: 28 July 2026</p>
+  <p class="meta">Effective date: 24 July 2026 · Last updated: 3 August 2026</p>
 
   <p class="lead">
     SayAgain is a browser extension that lets you capture, translate, and replay
@@ -97,11 +97,13 @@
   <div class="note">
     <strong>The short version:</strong> we store the phrases you choose to save,
     your account email, and your settings. We do not run ads, we do not sell your
-    data, we do not follow you around the web, and we use no analytics or
-    tracking tools. We do record which video a saved phrase came from — its
-    address and title — because a card cannot replay a moment without knowing
-    where that moment is. Card payments are handled entirely by Stripe — we never
-    see or store your card number.
+    data, and we do not follow you around the web. We do count how the extension
+    is used — which features are used and when — against a random number made on
+    your device that is not linked to you or to your account, and those counts
+    never contain a phrase, a video, or an address. We do record which video a
+    saved phrase came from — its address and title — because a card cannot replay
+    a moment without knowing where that moment is. Card payments are handled
+    entirely by Stripe — we never see or store your card number.
   </div>
 
   <h2>1. Who we are</h2>
@@ -133,10 +135,21 @@
     <li>your subscription status, and — if you subscribe — a customer identifier provided by Stripe so we can recognise your subscription. This identifier is used only on our server and is never exposed to the extension.</li>
   </ul>
 
+  <h3>Anonymous usage statistics</h3>
+  <p>SayAgain counts how the extension is used, so that we can tell which parts help people learn and which parts are failing. These counts are deliberately anonymous. This is the complete description of them.</p>
+  <ul>
+    <li><strong>What is counted.</strong> Only a fixed list of events: that a period of use began; that a phrase was selected, saved, or replayed; that a review session was started, that a card was rated, and that the session was finished or abandoned; and, when something goes wrong, that subtitles were unavailable, that a subtitle conflict was detected, or that an error occurred — the last identified by a code from a fixed list. Each event carries a few properties chosen in advance, such as how many words a phrase had, whether a translation was present, which of the four ratings was given, or how many cards were due for review. Nothing outside that list is sent. Each event also carries a random number of its own, made when the event is created, so that an event sent a second time after a network failure is not counted twice; it is different for every event and says nothing about you.</li>
+    <li><strong>What is never counted.</strong> No phrase text and no translation. No video title, video identifier, video address, page address, or referring page. No subtitle or transcript text. No email address, account identifier, password, or access token. No free-text message of any kind — when something fails we record a code, never a message, precisely so that a message cannot carry your content out with it. No clicks, keystrokes, or mouse positions; no screen or session recording; and no automatic capture of anything on the pages you visit.</li>
+    <li><strong>How the counts are labelled.</strong> The first time SayAgain runs it generates a random identifier on your device. It is not derived from your email address, your account, or anything else about you, and it is not linked to any account you may create. It is stored only on your device, it is not part of the settings that sync to your account, and it is <strong>not</strong> cleared when you sign out — because it contains nothing about you to clear. Removing the extension removes it.</li>
+    <li><strong>Where it goes.</strong> The extension sends these events to our own server, which passes them on to PostHog, the analytics provider we use. The extension never contacts PostHog, or any other third party, directly. <strong>Our PostHog project is hosted in the European Union</strong>, so these events are processed within the EU and are not transferred outside it. The contents of these requests are never written to our own logs.</li>
+    <li><strong>If you remove SayAgain.</strong> Your browser opens a short page on our server that asks one optional question about why you left. The page's address carries the random identifier described above — but in the part of a web address that your browser keeps to itself and never sends to a server. So the identifier reaches us <strong>only if you pick an answer</strong>, and only inside that answer. If you open the page and close it without answering, we are never told which installation it was; our server records that the page was requested, as any web server does, and that record contains no identifier of yours. The page has no text box and asks nothing else about you.</li>
+    <li><strong>This version has no switch to turn the counts off.</strong> We chose to tell you exactly what is collected rather than offer a setting we would then have to be trusted about. If you would rather send nothing at all, the reliable answer today is not to install SayAgain, or to remove it.</li>
+  </ul>
+
   <h3>What we do NOT collect</h3>
   <ul>
-    <li>No record of your browsing. We do not see, log, or store the pages you visit or the videos you watch. The one exception is deliberate and listed above: when <em>you</em> save a phrase, the card keeps that video's address and title, so it can replay that exact moment later. Videos you merely watch leave no trace with us.</li>
-    <li>No analytics, telemetry, advertising, or tracking of any kind.</li>
+    <li>No record of your browsing. We do not see, log, or store the pages you visit or the videos you watch. The one exception is deliberate and listed above: when <em>you</em> save a phrase, the card keeps that video's address and title, so it can replay that exact moment later. Videos you merely watch leave no trace with us — and in particular, the usage counts described above never carry a video, an address, or a page.</li>
+    <li>No advertising, no profiling, and no cross-site tracking. The usage counts above are the only measurement we do, and they are limited to the fixed list given there.</li>
     <li>No payment card details — see <a href="#payments">Payments</a>.</li>
   </ul>
 
@@ -145,6 +158,7 @@
     <li>To provide the core features: translating phrases and storing your saved cards and settings so they are available when you return and across your signed-in devices.</li>
     <li>To operate accounts: sign-in, email confirmation, and password reset.</li>
     <li>To manage subscriptions: recognise whether your plan is active and unlock the corresponding features.</li>
+    <li>To improve the extension: the anonymous usage counts described above tell us which features are used and which are failing. They are not linked to you, and they are not used to decide anything about an individual — only to see how the extension as a whole is doing.</li>
   </ul>
   <p>We do not use your data for advertising or profiling, and we do not sell or rent it to anyone.</p>
 
@@ -174,6 +188,11 @@
         <td>Google Cloud Run (Frankfurt, EU)</td>
         <td>Hosting our server — the one that translates, syncs cards and serves the review player page</td>
         <td>Everything the extension sends us passes through it: phrase text, saved cards, account requests</td>
+      </tr>
+      <tr>
+        <td>PostHog (EU region)</td>
+        <td>Anonymous usage statistics — which features are used and when</td>
+        <td>Only the fixed list of events described above, labelled with a random per-installation number. No phrase, translation, video, address or account identity. Our server sends these; the extension never contacts PostHog directly, and the data stays in the EU.</td>
       </tr>
       <tr>
         <td>Cloudflare</td>
